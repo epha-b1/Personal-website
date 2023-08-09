@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EB</title>
+<!-- Link to your Tailwind CSS file -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+	body {
+		/* overflow: hidden; */
+	}
+
+	#try {
+		min-height: 60vh
+	}
+
+	#try2 {
+		width: 80vw;
+	}
+
+	#mobileMenu.active {
+		overflow-y: auto;
+	}
+
+	a .text-transition {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s, visibility 0.2s;
+	}
+
+
+
+	a:hover .text-transition {
+		border-radius: 50%;
+
+		opacity: 1;
+		visibility: visible;
+	}
+
+	a .icon-transition {
+		transition: margin-right 0.2s, color 0.2s, background-color 0.2s, border-radius 0.2s;
+	}
+
+	a:hover .icon-transition {
+		margin-right: 8px;
+		color: white;
+		background-color: #f59e0b;
+		/* Use bg-yellow-500 color code here */
+		transform: scale(1.2);
+		/* Increase the scale to create the circular hover effect */
+		padding: 5px;
+	}
+
+	a:hover .bg-transition {
+		background-color: #f59e0b;
+		/* Use bg-yellow-500 color code here */
+		color: white;
+		padding: 8px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	a:active #icon {
+		background-color: #f59e0b;
+	}
+
+	a:active #iconSvg {
+		color: white;
+	}
+
+	#Nav_text {
+		color: white;
+	}
+
+	#mobileMenuButton,
+	#contactUsBtn {
+		z-index: 1000;
+		/* Adjust the value as needed */
+	}
+
+
+	/* about css */
+	@media (max-width: 640px) {
+		body {
+			overflow: auto;
+		}
+
+		#mobileMenu {}
+
+		#mobileMenuButton {
+			display: block;
+		}
+
+		#work {
+			padding: 3.1rem;
+		}
+	}
+</style>
+
+<body>
+	<div class="flex flex-col bg-light-1 px-4 md:px-20 items-center scroll-smooth gap-6">
+		<div class="flex flex-col w-full items-center justify-center md:min-h-screen px-0 md:px-12 pt-24 md:pt-4">
+			<section class="h-screen bg-white dark:bg-gray-800">
+				<div class="flex">
+					<nav id="mobileMenu" class="hidden lg:flex bg-white h-screen min-h-screen flex flex-col justify-center fixed top-0 right-0 overflow-y-auto">
+						<a href="index.html" class="text-gray-800 px-4 py-2 hover:bg-yellow-500 transition flex items-center space-x-2" id="homeLink">
+							<span class="transition text-transition flex-1" id="Nav_text">
+								Home
+							</span>
+							<span class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center icon-transition" id="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home w-6 h-6 text-gray-500" id="iconSvg">
+									<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path>
+									<polyline points="9 22 9 12 15 12 15 22"></polyline>
+								</svg>
+							</span>
+						</a>
+
+
+						<a href="about.html" class="text-gray-800 px-4 py-2 hover:bg-yellow-500 transition flex items-center space-x-2" id="aboutLink">
+							<span class="transition text-transition flex-1" id="Nav_text">
+								<!-- Add flex-1 class here -->
+								About
+							</span>
+							<span class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center icon-transition" id="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user w-6 h-6 text-gray-500" id="iconSvg">
+									<path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+									<circle cx="12" cy="7" r="4"></circle>
+								</svg>
+							</span>
+						</a>
+
+						<a href="portfolio.html" class="text-gray-800 px-4 py-2 hover:bg-yellow-500 transition flex items-center space-x-2" id="portfolioLink">
+							<span class="transition text-transition flex-1" id="Nav_text">
+								<!-- Add flex-1 class here -->
+								Portfolio
+							</span>
+							<span class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center icon-transition" id="portfolioIcon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers w-6 h-6 text-gray-500" id="portfolioIconSvg">
+									<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+									<polyline points="2 17 12 22 22 17"></polyline>
+									<polyline points="2 12 12 17 22 12"></polyline>
+								</svg>
+							</span>
+						</a>
+
+						<a href="contactUs.html" class="text-gray-800 px-4 py-2 hover:bg-yellow-500 transition flex items-center space-x-2" id="contactLink">
+							<span class="transition text-transition flex-1" id="Nav_text">
+								Contact Us
+							</span>
+							<span class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center icon-transition" id="contactIcon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail w-6 h-6 text-gray-500" id="contactIconSvg">
+									<path d="M22 4H2v16h20V4zM2 2h20a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm5.9 9.29L2 18l6.9-6.71L15.81 18 22 13.41 15.1 8.71l-2.09 2.04m-3.82 2.95l-2.08-2.04"></path>
+								</svg>
+							</span>
+						</a>
+					</nav>
+
+
+					<!-- Mobile Menu Button -->
+					<div class="lg:hidden fixed top-4 right-4 z-10">
+						<button id="mobileMenuButton" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="toggle menu">
+							<svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+								<path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+							</svg>
+						</button>
+					</div>
+
+					<!-- Main Content Area -->
+					<div class="flex items-center justify-center min-h-screen bg-white dark:bg-gray-900">
+	<div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+		<div class="mt-8 overflow-hidden">
+			<div class="grid grid-cols-1 md:grid-cols-2">
+				<div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
+					<h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
+						Get in touch
+					</h1>
+					<p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+						Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions. </p>
+
+					<div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+						<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+						</svg>
+						<div class="ml-4 text-md tracking-wide font-semibold w-40">
+							Acme Inc, Street, State,
+							Postal Code
+						</div>
+					</div>
+
+					<div class="flex items-center mt-4 text-gray-600 dark:text-gray-400">
+						<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+						</svg>
+						<div class="ml-4 text-md tracking-wide font-semibold w-40">
+							+251 919348364
+						</div>
+					</div>
+
+					<div class="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+						<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+						<div class="ml-4 text-md tracking-wide font-semibold w-40">
+							ephremyonatan27@gmail.com
+						</div>
+					</div>
+				</div>
+
+				<form action="{{ route('contact.submit') }}" method="POST" class="p-6 flex flex-col justify-center">
+					@csrf
+					<div class="flex flex-col">
+						<label for="name" class="hidden">Full Name</label>
+						<input type="text" name="name" id="name" placeholder="Full Name" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+					</div>
+
+					<div class="flex flex-col mt-2">
+						<label for="email" class="hidden">Email</label>
+						<input type="email" name="email" id="email" placeholder="Email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+					</div>
+
+					<div class="flex flex-col mt-2">
+						<label for="message" class="hidden">Message</label>
+						<textarea name="message" id="message" placeholder="Your Message" class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none resize-y"></textarea>
+					</div>
+
+					<button type="submit" class="md:w-32 bg-yellow-500 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
+						Submit
+					</button>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+						<!-- Contact Us Floating Action Button -->
+						<a href="#" class="fixed bottom-4 right-4 w-12 h-12 bg-yellow-500 text-white flex items-center justify-center rounded-full shadow-md" id="contactUsBtn">
+							<span class="text-lg">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+									<circle cx="12" cy="12" r="10"></circle>
+									<path d="M12 16l4-4m0 0l-4-4m4 4H8"></path>
+								</svg>
+							</span>
+						</a>
+
+						<div class="modal hidden fixed inset-0 z-50 overflow-y-auto" id="contactUsModal">
+							<div class="flex items-center justify-center min-h-screen px-4 text-center">
+								<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+								<div class="inline-block align-bottom bg-white rounded-lg px-8 py-6 text-left shadow-xl transform transition-all">
+
+									<div class="modal-header">
+										<h2 class="text-3xl font-bold">Contact Us</h2>
+										<button id="closeButton" type="button" class="absolute top-2 right-2 text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="Close">
+											<svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+												<path fill-rule="evenodd" d="M12 9l-9 7 1 3 9-7 9 7 1-3-9-7zm0 2l9 7-9-7-9 7 9-7z"></path>
+											</svg>
+										</button>
+									</div>
+									<div class="modal-body">
+										<!-- Your Contact Form Content -->
+										<form action="https://api.web3forms.com/submit" class="mt-4" id="contactForm">
+											<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+											<div class="grid gap-6 sm:grid-cols-2">
+												<div class="relative z-0">
+													<input type="text" name="name" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" " />
+													<label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">Your name</label>
+												</div>
+												<div class="relative z-0">
+													<input type="text" name="email" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" " />
+													<label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">Your email</label>
+												</div>
+												<div class="relative z-0 col-span-2">
+													<textarea name="message" rows="5" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" "></textarea>
+													<label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">Your message</label>
+												</div>
+											</div>
+											<button type="submit" class="mt-5 rounded-md bg-black px-10 py-2 text-white">Send Message</button>
+										</form>
+									</div>
+
+								</div>
+
+								<script>
+									const mobileMenuButton = document.getElementById('mobileMenuButton');
+									const mobileMenu = document.getElementById('mobileMenu');
+
+									mobileMenuButton.addEventListener('click', () => {
+										mobileMenu.classList.toggle('hidden');
+									});
+									const contactUsButton = document.getElementById('contactUsBtn');
+									const contactUsModal = document.getElementById('contactUsModal');
+									const closeButton = document.getElementById('closeButton');
+									const contactForm = document.getElementById('contactForm');
+
+									// Function to handle form submission
+									function handleSubmit(event) {
+										event.preventDefault();
+										// Get form data
+										const formData = new FormData(event.target);
+
+										// Perform form submission using fetch or any other method you prefer
+										fetch('https://api.web3forms.com/submit', {
+												method: 'POST',
+												body: formData
+											})
+											.then(response => response.json())
+											.then(data => {
+												// Handle form submission response here (show success message, etc.)
+												console.log(data);
+												// You can show a success message here
+												alert('Form submitted successfully!');
+												// Close the modal after form submission
+												contactUsModal.classList.add('hidden');
+											})
+											.catch(error => {
+												// Handle form submission error here (show error message, etc.)
+												console.error('Error submitting form:', error);
+												// You can show an error message here
+												alert('An error occurred while submitting the form. Please try again later.');
+											});
+									}
+
+									// Add event listener to the form
+									contactForm.addEventListener('submit', handleSubmit);
+
+									// Function to open the modal when the button is clicked
+									function handleOpenModal() {
+										contactUsModal.classList.remove('hidden');
+									}
+
+									// Add event listener to the button
+									contactUsButton.addEventListener('click', handleOpenModal);
+
+									// Function to close the modal when the close button is clicked
+									function handleCloseModal() {
+										contactUsModal.classList.add('hidden');
+									}
+
+									// Add event listener to the close button
+									closeButton.addEventListener('click', handleCloseModal);
+
+
+									const progressFill = document.getElementById("progressFill");
+									const progressText = document.getElementById("progressText");
+
+									// Set the percentage dynamically (e.g., 90%)
+									const percentage = 90;
+
+									progressFill.style.clipPath = `polygon(0 0, 100% 0, 100% ${percentage}%, 0 ${percentage}%)`;
+									progressText.textContent = `${percentage}%`;
+								</script>
+
+							</div>
+			</section>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

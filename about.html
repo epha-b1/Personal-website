@@ -279,37 +279,52 @@
 	<script>
 		document.addEventListener('alpine:init', () => {
 			Alpine.data('skillDisplay', () => ({
-				skills: [{
+				skills: [
+					{
 						'title': 'HTML',
 						'percent': '95',
 					},
 					{
 						'title': 'CSS',
-						'percent': '70',
+						'percent': '99',
 					},
 					{
 						'title': 'Tailwind CSS',
-						'percent': '90',
+						'percent': '95',
 					},
 					{
 						'title': 'JavaScript',
-						'percent': '70',
+						'percent': '99',
 					},
 					{
 						'title': 'Flutter',
 						'percent': '95',
-					}, {
-						'title': 'PHP',
-						'percent': '65',
-					}, {
+					},
+					{
 						'title': 'Laravel',
 						'percent': '75',
-					},{
+					},
+					{
 						'title': 'React',
-						'percent': '75',
-					},{
+						'percent': '98',
+					},
+					{
 						'title': 'Node',
-						'percent': '40',
+						'percent': '96',
+					},
+					},
+					{
+						'title': 'Mongo DB',
+						'percent': '96',
+					},
+					},
+					{
+						'title': 'Mysql',
+						'percent': '96',
+					},
+					{
+						'title': 'Python', // New skill added
+						'percent': '85',
 					}
 				],
 				currentSkill: {
@@ -319,6 +334,7 @@
 			}));
 		});
 	</script>
+	
 	<!-- Skills Ends -->
 	<hr class="separator mt-9 pb-6">
 	<!-- Experience & Education Starts -->
